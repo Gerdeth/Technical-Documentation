@@ -6,24 +6,100 @@
     <title>Technical Document</title>
 </head>
 <body>
-   <div id ="main-doc">
-       <div>
-           <header></header>
-       </div>
-       <div>
-        <header></header>
-       </div>
-       <div>
-        <header></header>
-       </div>
-       <div>
-        <header></header>
-       </div>
-       <div>
-        <header></header>
-       </div>
+   <main id ="main-doc">
+      <section class = "main-section " id="What_can_Python_do?">
+          <header > What can Python do?</header>
+          <p>
+            Python is simple to use, but it is a real programming language, offering much more structure and support for large programs than shell scripts or batch files can offer.
+             On the other hand, Python also offers much more error checking than C, and, being a very-high-level language, it has high-level data types built in, such as flexible arrays and dictionaries. 
+             Because of its more general data types Python is applicable to a much larger problem domain than Awk or even Perl, yet many things are at least as easy in Python as in those languages.  
+          </p>
+          <p>
+            Python allows you to split your program into modules that can be reused in other Python programs. 
+            It comes with a large collection of standard modules that you can use as the basis of your programs — or as examples to start learning to program in Python. 
+            Some of these modules provide things like file I/O, system calls, sockets, and even interfaces to graphical user interface toolkits like Tk.
+          </p>
+          <p>
+            Python is an interpreted language, which can save you considerable time during program development because no compilation and linking is necessary. The interpreter can be used interactively, which makes it easy to experiment with features of the language, to write throw-away programs, or to test functions during bottom-up program development. It is also a handy desk calculator.
 
-   </div> 
+            Python enables programs to be written compactly and readably. Programs written in Python are typically much shorter than equivalent C, C++, or Java programs, for several reasons:
+            
+            the high-level data types allow you to express complex operations in a single statement;
+            
+            statement grouping is done by indentation instead of beginning and ending brackets;
+            
+            no variable or argument declarations are necessary.
+            
+            Python is extensible: if you know how to program in C it is easy to add a new built-in function or module to the interpreter, either to perform critical operations at maximum speed, or to link Python programs to libraries that may only be available in binary form (such as a vendor-specific graphics library). 
+            Once you are really hooked, you can link the Python interpreter into an application written in C and use it as an extension or command language for that application.   
+          </p>
+      </section> 
+      <section class = "main-section " id= "The_Python_Interpreter">
+        <header > The Python Interpreter</header>
+        <p>
+            The Python interpreter is usually installed as /usr/local/bin/python3.9 on those machines where it is available; 
+            putting /usr/local/bin in your Unix shell’s search path makes it possible to start it by typing the command:
+
+            python3.9
+            to the shell. 1 Since the choice of the directory where the interpreter lives is an installation option, other places are possible; check with your local Python guru or system administrator. 
+            (E.g., /usr/local/python is a popular alternative location.)   
+        </p>
+        <p>
+            The interpreter’s line-editing features include interactive editing, history substitution and code completion on systems that support the GNU Readline library. Perhaps the quickest check to see whether command line editing is supported is typing Control-P to the first Python prompt you get.
+             If it beeps, you have command line editing; see Appendix Interactive Input Editing and History Substitution for an introduction to the keys. If nothing appears to happen, or if ^P is echoed, command line editing isn’t available; you’ll only be able to use backspace to remove characters from the current line.
+
+            The interpreter operates somewhat like the Unix shell: when called with standard input connected to a tty device, it reads and executes commands interactively; when called with a file name argument or with a file as standard input, it reads and executes a script from that file.    
+        </p>
+      </section> 
+      <section class = "main-section " id="Intro_to_Python">
+        <header > Intro to Python</header>
+        <p>
+            In the following examples, input and output are distinguished by the presence or absence of prompts (>>> and …): to repeat the example, you must type everything after the prompt, when the prompt appears; lines that do not begin with a prompt are output from the interpreter.
+            Note that a secondary prompt on a line by itself in an example means you must type a blank line; this is used to end a multi-line command.  
+        </p>
+        <p>
+            Comments in Python start with the hash character, #, and extend to the end of the physical line. 
+            A comment may appear at the start of a line or following whitespace or code, but not within a string literal. A hash character within a string literal is just a hash character. Since comments are to clarify code and are not interpreted by Python, they may be omitted when typing in examples.
+
+  
+        </p>
+
+      </section> 
+      <section class = "main-section " id= "Defining_Functions">
+        <header >Defining Functions</header>
+        <p>
+            The keyword def introduces a function definition. It must be followed by the function name and the parenthesized list of formal parameters. The statements that form the body of the function start at the next line, and must be indented.
+
+            The first statement of the function body can optionally be a string literal; this string literal is the function’s documentation string, or docstring. (More about docstrings can be found in the section Documentation Strings.) There are tools which use docstrings to automatically produce online or printed documentation, or to let the user interactively browse through code; it’s good practice to include docstrings in code that you write, so make a habit of it.
+            
+            
+        </p>
+        <p>
+            The execution of a function introduces a new symbol table used for the local variables of the function. More precisely, all variable assignments in a function store the value in the local symbol table; whereas variable references first look in the local symbol table, then in the local symbol tables of enclosing functions, then in the global symbol table, and finally in the table of built-in names. 
+            Thus, global variables and variables of enclosing functions cannot be directly assigned a value within a function (unless, for global variables, named in a global statement, or, for variables of enclosing functions, named in a nonlocal statement), although they may be referenced.  
+
+        </p>
+      </section> 
+      <section class = "main-section " id ="Documentation_Strings">
+        <header > Documentation Strings</header>
+        <p>
+            The first line should always be a short, concise summary of the object’s purpose. For brevity, it should not explicitly state the object’s name or type, since these are available by other means (except if the name happens to be a verb describing a function’s operation). 
+            This line should begin with a capital letter and end with a period.  
+        </p>
+        <p>
+            If there are more lines in the documentation string, the second line should be blank, visually separating the summary from the rest of the description. 
+            The following lines should be one or more paragraphs describing the object’s calling conventions, its side effects, etc.
+
+ 
+        </p>
+        <p>
+            The Python parser does not strip indentation from multi-line string literals in Python, so tools that process documentation have to strip indentation if desired. 
+            This is done using the following convention. The first non-blank line after the first line of the string determines the amount of indentation for the entire documentation string. (We can’t use the first line since it is generally adjacent to the string’s opening quotes so its indentation is not apparent in the string literal.) Whitespace “equivalent” to this indentation is then stripped from the start of all lines of the string. Lines that are indented less should not occur, but if they occur all their leading whitespace should be stripped. 
+            Equivalence of whitespace should be tested after expansion of tabs (to 8 spaces, normally).  
+        </p>
+      </section> 
+
+    </main> 
 <script src =" https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
 </body>
 </html>
