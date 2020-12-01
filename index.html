@@ -4,11 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Technical Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
    <main id ="main-doc">
        <nav id="navbar">
            <header> Python </header>
+           <ul>
+           <li> <a class="nav-link" href ="#What_can_Python_do?"> What can Python do?</a></li>
+           <li> <a class="nav-link" href= "#The_Python_Interpreter"> The Python Interpreter</a></li>
+           <li><a class="nav-link" href = "#Intro_to_Python"> Intro to Python</a></li>
+           <li><a class="nav-link" href = "#Defining_Functions"> Defining Functions</a></li>
+           <li><a class="nav-link" href = "#Documentation_Strings">Documentation Strings</a></li>
+          </ul>
 
        </nav>
       <section class = "main-section " id="What_can_Python_do?">
@@ -100,6 +108,35 @@
             The Python parser does not strip indentation from multi-line string literals in Python, so tools that process documentation have to strip indentation if desired. 
             This is done using the following convention. The first non-blank line after the first line of the string determines the amount of indentation for the entire documentation string. (We can’t use the first line since it is generally adjacent to the string’s opening quotes so its indentation is not apparent in the string literal.) Whitespace “equivalent” to this indentation is then stripped from the start of all lines of the string. Lines that are indented less should not occur, but if they occur all their leading whitespace should be stripped. 
             Equivalence of whitespace should be tested after expansion of tabs (to 8 spaces, normally).  
+        </p>
+        <p>
+          This example introduces several new features.
+          <li>The first line contains a multiple assignment: the variables a and b simultaneously get the new values 0 and 1. 
+            On the last line this is used again, demonstrating that the expressions on the right-hand side are all evaluated first before any of the assignments take place. The right-hand side expressions are evaluated from the left to the right. </li>
+          <li> The while loop executes as long as the condition (here: a < 10) remains true. 
+            In Python, like in C, any non-zero integer value is true; zero is false. The condition may also be a string or list value, in fact any sequence; anything with a non-zero length is true, empty sequences are false. 
+            The test used in the example is a simple comparison. The standard comparison operators are written the same as in C: < (less than), > (greater than), == (equal to), <= (less than or equal to), 
+            >= (greater than or equal to) and != (not equal to). 
+          </li>
+          <li> The body of the loop is indented: indentation is Python’s way of grouping statements. At the interactive prompt, you have to type a tab or space(s) for each indented line. In practice you will prepare more complicated input for Python with a text editor; all decent text editors have an auto-indent facility. 
+            When a compound statement is entered interactively, it must be followed by a blank line to indicate completion (since the parser cannot guess when you have typed the last line). 
+            Note that each line within a basic block must be indented by the same amount.
+          </li>
+          <li>The print() function writes the value of the argument(s) it is given. It differs from just writing the expression you want to write (as we did earlier in the calculator examples) in the way it handles multiple arguments, floating point quantities, and strings. 
+            Strings are printed without quotes, and a space is inserted between items, so you can format things nicely, like this:
+            
+              <code>
+               <li>>>> i = 256*256</li> 
+                <li>>>> print('The value of i is', i)</li>
+                <li>The value of i is 65536 </li>
+              </code>
+            
+          </li>
+
+
+
+
+
         </p>
       </section> 
 
